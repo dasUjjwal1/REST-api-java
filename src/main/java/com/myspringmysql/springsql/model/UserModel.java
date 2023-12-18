@@ -18,9 +18,18 @@ public class UserModel implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Integer userId;
+
     @Column(unique = true)
     private String userName;
+
+    private String firstname;
+
+    private String lastname;
+
+    private String email;
+
     private String password;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role_junction",

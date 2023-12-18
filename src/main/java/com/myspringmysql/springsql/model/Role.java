@@ -18,6 +18,7 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")
     private Integer roleId;
+
     private String authority;
 
     @Override

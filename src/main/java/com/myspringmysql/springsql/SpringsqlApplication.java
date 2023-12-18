@@ -20,20 +20,20 @@ public class SpringsqlApplication {
         SpringApplication.run(SpringsqlApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        return args -> {
-            if (roleRepository.findByAuthority("ADMIN").isPresent()) return;
-            Role adminRole = roleRepository.save(Role.builder().authority("ADMIN").build());
-            Set<Role> roles = new HashSet<>();
-            roles.add(adminRole);
-            UserModel userModel = UserModel.builder()
-                    .authorities(roles)
-                    .userName("Ujjwal1")
-                    .password(passwordEncoder.encode("password"))
-                    .build();
-
-            userRepository.save(userModel);
-        };
-    }
+//    @Bean
+//    CommandLineRunner runner(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+//        return args -> {
+//            if (roleRepository.findByAuthority("ADMIN").isPresent()) return;
+//            Role adminRole = roleRepository.save(Role.builder().authority("ADMIN").build());
+//            Set<Role> roles = new HashSet<>();
+//            roles.add(adminRole);
+//            UserModel userModel = UserModel.builder()
+//                    .authorities(roles)
+//                    .userName("Ujjwal1")
+//                    .password(passwordEncoder.encode("password"))
+//                    .build();
+//
+//            userRepository.save(userModel);
+//        };
+//    }
 }

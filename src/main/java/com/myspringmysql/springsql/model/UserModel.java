@@ -1,6 +1,7 @@
 package com.myspringmysql.springsql.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,6 +21,7 @@ public class UserModel implements UserDetails {
     private Integer userId;
 
     @Column(unique = true)
+    @NotBlank(message = "Username is required")
     private String userName;
 
     private String firstname;

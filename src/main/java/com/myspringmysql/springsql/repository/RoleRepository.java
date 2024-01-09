@@ -1,11 +1,10 @@
 package com.myspringmysql.springsql.repository;
 
-import com.myspringmysql.springsql.model.Role;
+import com.myspringmysql.springsql.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-@Repository
+
 public interface RoleRepository extends JpaRepository<Role,Integer> {
     Optional<Role> findByAuthority(String authority);
 }

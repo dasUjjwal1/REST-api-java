@@ -1,17 +1,13 @@
 package com.myspringmysql.springsql.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.myspringmysql.springsql.model.UserModel;
-import lombok.AllArgsConstructor;
+import com.myspringmysql.springsql.entity.UserModel;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class AuthenticationResponse {
+public class AuthResponseDTO {
     private String jwtToken;
     @JsonProperty("userDetails")
     private UserModel user;

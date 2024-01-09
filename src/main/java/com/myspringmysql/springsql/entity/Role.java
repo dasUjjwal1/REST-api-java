@@ -1,4 +1,4 @@
-package com.myspringmysql.springsql.model;
+package com.myspringmysql.springsql.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,6 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")
     private Integer roleId;
-
     private String authority;
 
     @Override

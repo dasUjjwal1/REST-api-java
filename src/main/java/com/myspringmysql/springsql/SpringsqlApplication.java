@@ -1,7 +1,7 @@
 package com.myspringmysql.springsql;
 
-import com.myspringmysql.springsql.model.Role;
-import com.myspringmysql.springsql.model.UserModel;
+import com.myspringmysql.springsql.entity.Role;
+import com.myspringmysql.springsql.entity.UserModel;
 import com.myspringmysql.springsql.repository.RoleRepository;
 import com.myspringmysql.springsql.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -19,7 +19,6 @@ public class SpringsqlApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringsqlApplication.class, args);
     }
-
     @Bean
     CommandLineRunner runner(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {

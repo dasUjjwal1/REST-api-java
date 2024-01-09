@@ -1,4 +1,4 @@
-package com.myspringmysql.springsql.config;
+package com.myspringmysql.springsql.utils;
 
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;

@@ -34,8 +34,9 @@ public class UserModel implements UserDetails {
     private String email;
 
     private String password;
-    @Column(columnDefinition = "json")
-    private JsonObject qualification;
+
+    @Column(columnDefinition = "jsonb")
+    private String qualification;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

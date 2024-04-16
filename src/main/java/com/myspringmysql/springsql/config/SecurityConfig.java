@@ -51,15 +51,12 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
+        http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/api/v1/auth/**").permitAll();
-                    auth.requestMatchers("/api/v1/admin/**").hasRole("ADMIN");
-                    auth.anyRequest().authenticated();
+                    auth.requestMatchers("/api/v1/admin/**").permitAll();
                 });
-        http.oauth2ResourceServer((oauth2ResourceServer) ->
-                oauth2ResourceServer
-                        .jwt((jwt) -> jwt.decoder(jwtDecoder())));
+
         return http.build();
 
     }

@@ -1,5 +1,6 @@
 package com.myspringmysql.springsql.entity;
 
+import com.google.gson.JsonObject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,6 +34,8 @@ public class UserModel implements UserDetails {
     private String email;
 
     private String password;
+    @Column(columnDefinition = "json")
+    private JsonObject qualification;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

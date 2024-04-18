@@ -10,11 +10,11 @@ import lombok.Setter;
 @Setter
 @Builder
 public class UserLoginRequest {
-    @NotNull(message = "username:string")
-    @NotBlank(message = "username required")
+    @NotNull()
+    @NotBlank()
     private String username;
 
-    @NotNull(message = "password:string")
-    @NotBlank(message = "password required")
+    @NotNull()
+    @NotBlank()
     private String password;
 }

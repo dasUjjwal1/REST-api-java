@@ -1,9 +1,14 @@
 package com.myspringmysql.springsql.util;
 
-import java.util.HashMap;
-import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Builder
+@Getter
+@Setter
 public class ErrorHandler {
-    String message;
-    Map error = new HashMap<>();
+   private String message;
+
 }

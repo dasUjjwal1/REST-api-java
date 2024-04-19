@@ -3,7 +3,7 @@ package com.myspringmysql.springsql.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-@Table(name = "")
+@Table(name = "tbl_user")
 @Entity
 public class UserEntity {
     private String email;
